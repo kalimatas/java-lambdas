@@ -1,6 +1,7 @@
 package chapter3;
 
 import domain.Artist;
+import domain.SampleData;
 
 import java.util.Arrays;
 
@@ -10,8 +11,10 @@ public class Chapter3 {
                                     new Artist("EEE", "En"),
                                     new Artist("EE2", "En"));
 
-        long count = artists.stream()
-                            .filter(artist -> artist.isFrom("En"))
+        var threeArtists = SampleData.getThreeArtists();
+
+        long count = threeArtists.stream()
+                            .filter(artist -> artist.isFrom("UK"))
                             .count();
 
         System.out.println(count);
